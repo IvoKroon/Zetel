@@ -25,19 +25,19 @@ class Game {
         let startPos = new Pos(7,28);
         let endPos = new Pos(7,27);
 
-        this.board = new Board(this,this.matrix,this.blockSize,true, true);
+        this.board = new Board(this,this.matrix,this.blockSize,false, false);
         //load the image
 
-        this.car = new Car(this,startPos,endPos, this.blockSize);
+        this.car = new Car(this,startPos,endPos, this.blockSize, "images/maincar.png");
 
         this.carList.push(
-            new Car(this, new Pos(8,4), new Pos(8,1), this.blockSize),
-            new Car(this, new Pos(9,4), new Pos(6,24), this.blockSize),
-            new Car(this, new Pos(25,2), new Pos(14,9), this.blockSize),
-            new Car(this, new Pos(36,1), new Pos(15,16), this.blockSize),
-            new Car(this, new Pos(7,4), new Pos(23,18), this.blockSize),
-            new Car(this, new Pos(30,5), new Pos(6,8), this.blockSize),
-            new Car(this, new Pos(29,10), new Pos(12,20), this.blockSize)
+            new Car(this, new Pos(8,4), new Pos(8,1), this.blockSize,"images/car.png"),
+            new Car(this, new Pos(9,4), new Pos(6,24), this.blockSize,"images/car.png"),
+            new Car(this, new Pos(25,2), new Pos(14,9), this.blockSize,"images/car.png"),
+            new Car(this, new Pos(36,1), new Pos(15,16), this.blockSize,"images/car.png"),
+            new Car(this, new Pos(7,4), new Pos(23,18), this.blockSize,"images/car.png"),
+            new Car(this, new Pos(30,5), new Pos(6,8), this.blockSize,"images/car.png"),
+            new Car(this, new Pos(29,10), new Pos(12,20), this.blockSize,"images/car.png")
             );
         this.load();
         //load the socket

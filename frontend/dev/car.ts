@@ -26,7 +26,9 @@ class Car{
     public done:Boolean = false;
     private rotate:number;
 
-    constructor(game:Game, startPos:Pos, endPos:Pos, blockSize:number){
+    private imageSrc:string;
+
+    constructor(game:Game, startPos:Pos, endPos:Pos, blockSize:number, imageSrc:string){
         this.radius = 10;
         this.game = game;
 
@@ -38,6 +40,8 @@ class Car{
         this.previousY = this.y;
         this.endPos = endPos;
         this.rotate = 0;
+
+        this.imageSrc = imageSrc;
         
         //speed
         this.speed = 1;
@@ -57,7 +61,7 @@ class Car{
             this.moveImage();
         };
 
-        this.image.src = 'images/car.png';
+        this.image.src = this.imageSrc;
     }
 
     private moveImage(){

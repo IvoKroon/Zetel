@@ -87,7 +87,7 @@ var Board = (function () {
     return Board;
 }());
 var Car = (function () {
-    function Car(game, startPos, endPos, blockSize) {
+    function Car(game, startPos, endPos, blockSize, imageSrc) {
         this.step = 1;
         this.done = false;
         this.radius = 10;
@@ -99,6 +99,7 @@ var Car = (function () {
         this.previousY = this.y;
         this.endPos = endPos;
         this.rotate = 0;
+        this.imageSrc = imageSrc;
         this.speed = 1;
         this.calcPath();
         this.loadImage();
@@ -109,7 +110,7 @@ var Car = (function () {
         this.image.onload = function () {
             _this.moveImage();
         };
-        this.image.src = 'images/car.png';
+        this.image.src = this.imageSrc;
     };
     Car.prototype.moveImage = function () {
         var width = 20;
@@ -231,9 +232,9 @@ var Game = (function () {
         this.blockSize = 20;
         var startPos = new Pos(7, 28);
         var endPos = new Pos(7, 27);
-        this.board = new Board(this, this.matrix, this.blockSize, true, true);
-        this.car = new Car(this, startPos, endPos, this.blockSize);
-        this.carList.push(new Car(this, new Pos(8, 4), new Pos(8, 1), this.blockSize), new Car(this, new Pos(9, 4), new Pos(6, 24), this.blockSize), new Car(this, new Pos(25, 2), new Pos(14, 9), this.blockSize), new Car(this, new Pos(36, 1), new Pos(15, 16), this.blockSize), new Car(this, new Pos(7, 4), new Pos(23, 18), this.blockSize), new Car(this, new Pos(30, 5), new Pos(6, 8), this.blockSize), new Car(this, new Pos(29, 10), new Pos(12, 20), this.blockSize));
+        this.board = new Board(this, this.matrix, this.blockSize, false, false);
+        this.car = new Car(this, startPos, endPos, this.blockSize, "images/maincar.png");
+        this.carList.push(new Car(this, new Pos(8, 4), new Pos(8, 1), this.blockSize, "images/car.png"), new Car(this, new Pos(9, 4), new Pos(6, 24), this.blockSize, "images/car.png"), new Car(this, new Pos(25, 2), new Pos(14, 9), this.blockSize, "images/car.png"), new Car(this, new Pos(36, 1), new Pos(15, 16), this.blockSize, "images/car.png"), new Car(this, new Pos(7, 4), new Pos(23, 18), this.blockSize, "images/car.png"), new Car(this, new Pos(30, 5), new Pos(6, 8), this.blockSize, "images/car.png"), new Car(this, new Pos(29, 10), new Pos(12, 20), this.blockSize, "images/car.png"));
         this.load();
         this.socketHandler = new SocketHandler();
         this.socketHandler.emit("hello", "test");
