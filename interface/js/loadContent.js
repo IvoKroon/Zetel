@@ -23,6 +23,9 @@ $(document).ready(function () {
             $(".icons").slideToggle(400);
             $("#googleMaps").css('display', 'block');
             google.maps.event.trigger(map, 'resize');
+            $('html, body').animate({
+                    scrollTop: $("#googleMaps").offset().top - 140},
+                'slow');
 
         });
 
@@ -30,7 +33,10 @@ $(document).ready(function () {
             $(".icons").slideToggle(400);
             $("#googleMaps").css('display', 'none');
             $(".info").css('display', 'block');
-
+            console.log($(".info").offset().top);
+            $('html, body').animate({
+                    scrollTop: $(".info").offset().top - 150},
+                'slow');
         });
 
         $("#foodButton").on("click", function () {
@@ -39,6 +45,10 @@ $(document).ready(function () {
             $("#googleMaps").css('display', 'none');
             $(".info").css('display', 'none');
             $(".food").css('display', 'block');
+
+            $('html, body').animate({
+                    scrollTop: $(".food").offset().top - 140},
+                'slow');
 
         });
 

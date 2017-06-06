@@ -67,6 +67,10 @@ p {
         text-decoration: none;
     }
 
+    #container {
+        height: 150%;
+    }
+
     /*end navbar*/
     .context {
         margin-left: 5%;

@@ -28,6 +28,11 @@ function initMap() {
             lng: position.coords.longitude
         };
 
+        let center = {
+            lat: position.coords.latitude - 0.002,
+            lng: position.coords.longitude + 0.002
+        };
+
         userMarker = new google.maps.Marker({
             position: pos,
             map: map,
@@ -35,7 +40,7 @@ function initMap() {
             title: 'You',
             animation: google.maps.Animation.DROP
         });
-        map.setCenter(pos);
+        map.setCenter(center);
 
     })
 }
