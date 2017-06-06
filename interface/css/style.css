@@ -28,7 +28,7 @@ p {
 
     /*navbar*/
     .nav-empty {
-        background-color: #0000FF;
+        background-color: #3477e2;
         width: 100%;
         height: 10%;
         top: 0;
@@ -115,6 +115,12 @@ p {
         color: grey !important;
     }
 
+    #home {
+        color:gray;
+        font-size: 3.5vw;
+        margin-top: 20%;
+    }
+
     #submit {
         width: 100px;
         border-radius: 4px;
@@ -147,6 +153,7 @@ p {
     .icons {
         display: none;
         margin-top: 20px;
+        margin-left: 9%;
     }
 
     .fa-circle {
@@ -162,7 +169,7 @@ p {
     .icons-upper-row, .icons-lower-row {
         margin-left: auto;
         margin-right: auto;
-        width: 100px;
+        width: 100%;
     }
 
     .icons-upper-row {
@@ -263,5 +270,27 @@ p {
 
     #arrive p {
         padding-top: 10px;
+    }
+
+    #loading {
+        display: none;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+    }
+
+    #loader {
+        border: 16px solid #f3f3f3; /* Light grey */
+        border-top: 16px solid #3477e2; /* Blue */
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        animation: spin 2s linear infinite;
+        margin: 45% auto auto;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
     }
 }

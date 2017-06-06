@@ -6,13 +6,15 @@ var ICAO;
 var mainFlight;
 
 function flightInput() {
-    mainFlight = ($("#flight").val());
+    mainFlight = ($("#flight").val().toUpperCase());
+    console.log(mainFlight);
 
     if(mainFlight == "") {
 
     } else {
         $(".flight-input").css('display', 'none');
         $(".travelling-info").css('display', 'block');
+        $("#loading").css('display', 'block');
         apiCall();
     }
 
@@ -25,7 +27,6 @@ function apiCall() {
         dataType: 'json',
         headers: {'resourceversion': 'v3'},
         success: function (data) {
-            console.log(data);
             findFlight(data);
             setValues(data)
         }
@@ -36,13 +37,12 @@ function apiCall() {
 
         $(flights).each(function (index) {
             if(this.mainFlight == mainFlight) {
-                console.log("vlucht gevonden");
                 setValues(flights[index]);
             } else {
                 $("#destination").text("Geen vlucht gevonden");
+                $("#loading").css('display', 'none');
             }
         })
-
     }
 
     function setValues(data) {
@@ -79,6 +79,7 @@ function apiCall() {
             headers: {'resourceversion': 'v1'},
             success: function (data) {
                 $("#destination").text(data.city + " " + "(" + IATA + ")");
+                $("#loading").css('display', 'none');
             }
         });
     }
