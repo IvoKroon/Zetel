@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Typescript Classes</title>
+    <!--<link rel="stylesheet" type="text/css" href="css/style.css">-->
+    <style>
+      *{
+        padding: 0;
+        margin:0;
+      }
+      html, body { width:100%; height:100%; }
+      canvas { 
+        display:block;
+        background: black;
+        background-image: url("images/PlattegrondSchiphol.png");
+        background-size: 100%;
+        background-repeat:no-repeat;
+        
+       }
+    </style>
+  </head>
+  <body>
+      <script src="/socket.io/socket.io.js"></script>
+      <canvas width="1200" height="700" id="canvas"></canvas>
+      <script src="pathfinding/pathfinding.js"></script>
+      <script src='main.js'></script>
+  </body>
+</html>

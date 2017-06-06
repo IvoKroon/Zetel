@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+    <title>Socket.IO chat</title>
+</head>
+<body>
+<script src="/socket.io/socket.io.js"></script>
+
+<button id="button">CLICK HERE</button>
+<script>
+    var socket = io();
+    //    var message = "HELLO";
+    var element = document.getElementById("button");
+
+    element.addEventListener("click", function () {
+        socket.emit("send_message", {message:"YEAAAAAAh BUTTON CLICKED"});
+    });
+
+
+    socket.on('get_message', function(msg){
+        console.log(msg);
+    });
+
+</script>
+</body>
+</html>

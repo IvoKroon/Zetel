@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chill-Chair</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
+
+    <!-- Stylesheet-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+
+</head>
+<body>
+<!-- Load the socket -->
+<script src="/socket.io/socket.io.js"></script>
+<!--info bar-->
+<nav class="nav-empty">
+    <div class="nav-info">
+        <div class="info-text">
+            <i class="fa fa-plane" aria-hidden="true"></i>
+            <p>Persoonlijk reisadvies<i id="time">13:40</i></p>
+        </div>
+    </div>
+</nav>
+
+<!--vlucht info-->
+<div id="container">
+
+    <div class="context">
+
+        <div class="flight-input">
+            <form action="javascript:flightInput();">
+                <label for="flight">Vluchtnummer:</label><br>
+                <input name="flight" id="flight" type="text">
+                <input type="submit" id="submit" value="Zoek vlucht">
+            </form>
+        </div>
+
+        <div class="travelling-info">
+            <div class="context-info">
+                <span>Naar</span>
+                <p id="destination"></p>
+                <br>
+                <span>Maatschappij</span>
+                <p id="airline"></p>
+            </div>
+            <div class="context-flight">
+                <hr>
+                <div class="flight-info">Vertrektijd</div>
+                <div class="flight-info">Vertrekhal</div>
+                <div class="flight-info">Gate</div>
+
+                <div class="flight-info snd" id="departure"></div>
+                <div class="flight-info snd" id="terminal"></div>
+                <div class="flight-info snd" id="gate"></div>
+                <hr>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu"><i class="fa fa-angle-double-down arrow" aria-hidden="true"></i></div>
+    <div class="icon-div"></div>
+    <div class="content"></div>
+    <div id="googleMaps"></div>
+    <div class="info">
+        <h3>Welkom reiziger</h3>
+        <p>De Chill-Chair is gemaakt in samenwerking met studenten van de Hogeschool Rotterdam.
+        </p>
+        <p>
+            De Chill-Chair neemt al uw zorgen weg en geeft u een stressloze start van uw vakantie.
+            Nooit meer rennen naar de gate om op tijd te komen, de weg kwijt raken of uw vliegtijden vergeten.
+            De Chill-Chair brengt u veilig en op tijd naar uw gate!
+        </p>
+        <p>
+            Uiteraard is het geen probleem om tussendoor nog een hapje te eten. Klik op het restaurant icoon
+            en u wordt onmiddelijk naar het door uw gekozen restaurant gebracht.
+        </p>
+        <p>Toch voor de zekerheid even kijken waar u zich
+            bevindt? Ook dat is geen probleem! Klik op de plattegrond en u ziet meteen waar de chill-chair zich bevindt.
+        </p>
+        <p>Wij wensen u een goede en "chille" vlucht!</p>
+    </div>
+    <div class="food">
+        <div class="foodImg"><img src="img/McDonalds.png" alt="MacDonalds">
+            <a href="#" id="food">
+                <div id="circle">Go!</div>
+            </a>
+        </div>
+        <div id="arrive">
+            <p>Blijf lekker zitten!</p>
+            <p>U arriveert over 3 minuten!</p>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript" src="js/maps.js"></script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?v=3.28&key=AIzaSyC2A3zWHUe8kj9Vk4ZRlv19N7I0OSLHyi4&callback=initMap"></script>
+<script type="text/javascript" src="js/jquery.1.11.1.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/schiphol.js"></script>
+<script type="text/javascript" src="js/loadContent.js"></script>
+
+</body>
+
+</html>
