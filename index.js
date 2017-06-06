@@ -9,11 +9,6 @@ app.get('/', function(req, res){
     res.sendFile(__dirname + '/frontend/docs/index.html');
 });
 
-app.get('/test', function(req, res){
-    // app.use(express.static(__dirname + '/frontend/docs'));
-    res.sendFile(__dirname + '/html/index.html');
-});
-
 app.get('/interface', function(req, res){
     // res.send
     app.use(express.static(__dirname + '/interface/'));
