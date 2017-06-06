@@ -29,7 +29,7 @@ function initMap() {
         };
 
         let center = {
-            lat: position.coords.latitude - 0.002,
+            lat: position.coords.latitude - 0.001,
             lng: position.coords.longitude + 0.002
         };
 
@@ -40,7 +40,7 @@ function initMap() {
             title: 'You',
             animation: google.maps.Animation.DROP
         });
-        map.setCenter(center);
+        map.setCenter(pos);
 
     })
 }
