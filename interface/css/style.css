@@ -155,7 +155,7 @@ p {
     }
 
     .icons {
-        display: none;
+        display: block;
         margin-top: 20px;
         margin-left: 9%;
     }
@@ -195,12 +195,12 @@ p {
     }
 
     #googleMaps {
-        width: 100%;
+        width: 95%;
         margin-left: auto;
         margin-right: auto;
         height: 350px;
         background-color: grey;
-        /*border-radius: 12px !important;*/
+        border-radius: 12px !important;
         border: 1px solid grey;
         margin-bottom: 30px;
         display: none;
