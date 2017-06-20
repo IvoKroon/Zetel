@@ -16,6 +16,7 @@ function startTime() {
     t = setTimeout(function() {
         startTime()
     }, 500);
+
 }
 
 

@@ -53,6 +53,16 @@ $(document).ready(function () {
         });
 
         $("#food").on("click", function () {
+            $.ajax({
+                url: "http://192.168.43.37/",
+                type: 'GET',
+                dataType: 'text/plain',
+                data: {location: 'McDonalds'},
+                success: function (data) {
+                    console.log('done' + data)
+                }
+            });
+
             emit("button");
             $("#food").css('display', 'none');
             $("#arrive").css('display', 'block');

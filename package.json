@@ -3,8 +3,13 @@
   "version": "0.0.1",
   "description": "my first socket.io app",
   "dependencies": {
+    "bcrypt": "^1.0.2",
+    "bluetooth-serial-port": "^2.1.2",
     "express": "^4.10.2",
     "gulp": "^3.9.1",
+    "johnny-five": "^0.11.1",
+    "node-bluetooth": "^1.1.0",
+    "node-gyp": "^3.6.2",
     "socket.io": "^1.7.1"
   },
   "devDependencies": {

@@ -7,7 +7,6 @@ var mainFlight;
 
 function flightInput() {
     mainFlight = ($("#flight").val().toUpperCase());
-    console.log(mainFlight);
 
     if(mainFlight == "") {
 
@@ -47,11 +46,37 @@ function apiCall() {
 
     function setValues(data) {
         var time = data.scheduleTime;
+        var send = false;
         var departure = time.substr(0, 5);
         IATA = data.route.destinations[0];
         mainFlight = data.mainFlight;
         ICAO = data.prefixICAO;
 
+        var checkTimeInterval = window.setInterval(checkTime, 1000);
+
+        function checkTime() {
+            let curr_date = new Date;
+            let curr_hours = curr_date.getHours();
+            if(curr_hours < 10) {
+                curr_hours = '0'+ curr_hours;
+            }
+            let curr_time = curr_hours + ":" + curr_date.getMinutes();
+
+            if (curr_time == departure && send === false) {
+                checkTimeInterval.clear();
+                console.log(curr_time + "+" + departure);
+                send = true;
+                $.ajax({
+                    url: "http://192.168.43.37/",
+                    type: 'GET',
+                    dataType: 'text/plain',
+                    data: {location: 'Gate'},
+                    success: function (data) {
+                        console.log('done' + data)
+                    }
+                });
+            }
+        }
 
         if(data.terminal == null) {
             $("#terminal").text("-");
